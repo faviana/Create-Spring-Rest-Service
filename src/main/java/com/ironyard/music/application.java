@@ -25,17 +25,17 @@ public class application {
     @Bean
     public Docket newsApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("music")
+                .groupName("singer")
                 .apiInfo(apiInfo())
                 .select()
-                .paths(regex("/music.*"))
+                .paths(regex("/singer.*"))
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Music API with Swagger, SpringBoot, JPA via Hibernate")
-                .description("Create your favorite music list here")
+                .title("Album API with Swagger, SpringBoot, JPA via Hibernate")
+                .description("Create your favorite list of singers here")
                 .termsOfServiceUrl("http://theironyard.com")
                 .contact("Faviana Lopez")
                 .license("Apache License Version 2.0")

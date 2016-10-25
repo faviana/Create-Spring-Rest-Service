@@ -1,11 +1,11 @@
 package com.ironyard.music.repositories;
 
-import com.ironyard.music.data.Music;
+import com.ironyard.music.data.Singer;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  * Created by favianalopez on 10/24/16.
  */
 
-public interface MusicRepository extends CrudRepository< Music, Long> {}
+public interface SingerRepository extends CrudRepository<Singer, Long> {}
 

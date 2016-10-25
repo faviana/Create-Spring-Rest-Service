@@ -10,39 +10,39 @@ import java.util.Date;
  * Created by favianalopez on 10/24/16.
  */
 @Entity
-public class Music {
+public class Album {
 
-    private String songName;
-    private String songGenre;
-    private String artistName;
+    private String revenue;
+    private String numberOfCopiesSold;
+    private String albumPrice;
     private String albumName;
     private Date releaseDate;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    public String getSongName() {
-        return songName;
+    public String getRevenue() {
+        return revenue;
     }
 
-    public void setSongName(String songName) {
-        this.songName = songName;
+    public void setRevenue(String revenue) {
+        this.revenue = revenue;
     }
 
-    public String getSongGenre() {
-        return songGenre;
+    public String getNumberOfCopiesSold() {
+        return numberOfCopiesSold;
     }
 
-    public void setSongGenre(String songGenre) {
-        this.songGenre = songGenre;
+    public void setNumberOfCopiesSold(String numberOfCopiesSold) {
+        this.numberOfCopiesSold = numberOfCopiesSold;
     }
 
-    public String getArtistName() {
-        return artistName;
+    public String getAlbumPrice() {
+        return albumPrice;
     }
 
-    public void setArtistName(String artistName) {
-        this.artistName = artistName;
+    public void setAlbumPrice(String albumPrice) {
+        this.albumPrice = albumPrice;
     }
 
     public String getAlbumName() {
