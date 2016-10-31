@@ -32,24 +32,24 @@ public class SingerController {
     }
 
 
-    @RequestMapping(value ="/singer", method = RequestMethod.POST, produces ="application/json")
+    @RequestMapping(value ="/service/singer", method = RequestMethod.POST, produces ="application/json")
     public Singer saveSinger (@RequestBody Singer aSinger){
         singerRepository.save(aSinger);
         return singerRepository.findOne(aSinger.getId());
     }
 
-    @RequestMapping(value = "/singer/update", method = RequestMethod.PUT)
+    @RequestMapping(value = "/service/singer", method = RequestMethod.PUT)
     public Singer updateSinger (@RequestBody Singer aSinger){
         singerRepository.save(aSinger);
         return singerRepository.findOne(aSinger.getId());
     }
 
-    @RequestMapping(value = "/singer/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/service/singer/{id}", method = RequestMethod.GET)
     public Singer showSinger(@PathVariable Long id){
         return singerRepository.findOne(id);
     }
 
-    @RequestMapping(value = "/singers", method = RequestMethod.GET)
+    @RequestMapping(value = "//service/singers", method = RequestMethod.GET)
     public Iterable<Singer> listSingers(@RequestParam (value = "page") Integer page,
                                         @RequestParam ("size") Integer size,
                                         @RequestParam (value = "sortby", required = false) String sortby,
@@ -68,11 +68,6 @@ public class SingerController {
         PageRequest pr =new PageRequest(page, size, sort);
         list = singerSortingRepository.findAll(pr);
 
-        try{
-            list = singerRepository.findAll();
-        }catch(Throwable x){
-            x.printStackTrace();
-        }
         log.debug(list.toString());
         log.debug("debug level log");
         log.info("info level log");
@@ -80,7 +75,7 @@ public class SingerController {
         return list;
     }
 
-    @RequestMapping(value = "/singer/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/service/singer/delete/{id}", method = RequestMethod.DELETE)
     public Singer deleteSinger(@PathVariable Long id){
         Singer deleted = singerRepository.findOne(id);
         singerRepository.delete(id);
